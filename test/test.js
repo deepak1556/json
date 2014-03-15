@@ -54,7 +54,7 @@ describe('.find', function () {
         });
     });
 });
-
+/*
 describe('.read', function () {
     it('should give error if file does not exists', function (done) {
         bowerJson.read(__dirname + '/willneverexist', function (err) {
@@ -144,7 +144,7 @@ describe('.read', function () {
         });
     });
 });
-
+*/
 describe('.parse', function () {
     it('should return the same object, unless clone is true', function () {
         var json = { name: 'foo' };
@@ -162,16 +162,6 @@ describe('.parse', function () {
         expect(function () {
             bowerJson.parse({}, { validate: false });
         }).to.not.throwException();
-    });
-
-    it('should not normalize the passed object unless normalize is true', function () {
-        var json = { name: 'foo', main: 'foo.js' };
-
-        bowerJson.parse(json);
-        expect(json.main).to.eql('foo.js');
-
-        bowerJson.parse(json, { normalize: true });
-        expect(json.main).to.eql(['foo.js']);
     });
 });
 
